@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/Volodymyr999/Robot-school/issues"
   },
-  "homepage": "https://github.com/Volodymyr999/Robot-school#readme"
+  "homepage": "https://github.com/Volodymyr999/Robot-school#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "eslint": "^9.19.0",
+    "eslint-plugin-unicorn": "^56.0.1",
+    "globals": "^15.14.0"
+  }
 }
