@@ -1,0 +1,19 @@
+{
+  "name": "robot-school",
+  "version": "1.0.0",
+  "description": "The purpose of this repository is to store homeworks. See more detailes below:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Volodymyr999/Robot-school.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Volodymyr999/Robot-school/issues"
+  },
+  "homepage": "https://github.com/Volodymyr999/Robot-school#readme"
+}
