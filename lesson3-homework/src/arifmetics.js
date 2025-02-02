@@ -1,7 +1,7 @@
 const a = 4;
 const hi = "Hello";
-const booleanvar = true;
-const booleanvar2 = false;
+const booleanVar = true;
+const booleanVar2 = false;
 
 let name = " Robert";
 let b = 5;
@@ -9,4 +9,4 @@ let b = 5;
 
 console.log(a * b);
 console.log(hi + name);
-console.log(booleanvar + booleanvar2);
+console.log(booleanVar + booleanVar2);
