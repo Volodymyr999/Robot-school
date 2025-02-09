@@ -1,6 +1,6 @@
 const car = {
     brand: "BMW",
-    series: "5",
+    _series: "5",
     country: "German",
     detailes: {
         year: "2005",
@@ -9,16 +9,16 @@ const car = {
     },
 
     get fullInfo() {
-        return `this is ${this.brand} ${this.series} series, from ${this.country}`;
+        return `this is ${this.brand} ${this._series} series, from ${this.country}`;
     },
 
-    get _series(){
-        return this.series;
+    get series(){
+        return this._series;
     },
 
-    set _series(modelUPD) {
+    set series(modelUPD) {
         if (modelUPD >= 1 && modelUPD <= 8){
-            this.series = modelUPD;
+            this._series = modelUPD;
         } else {
             console.log("Model must be between 1 and 8");
         }
@@ -34,9 +34,9 @@ function calculateCarAge(yo){
 
 console.log(car.fullInfo);
 console.log("-------");
-console.log(car.series);
+console.log(car._series);
 car._series = 8;
-console.log(car.series);
+console.log(car._series);
 console.log("-------");
 console.error(car.fullInfo);
 console.log(`Your car is ${calculateCarAge(car.detailes.year)} years old!`);
