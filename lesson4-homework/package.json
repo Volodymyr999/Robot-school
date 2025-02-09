@@ -1,6 +1,7 @@
 {
   "name": "robot-school",
   "version": "1.0.0",
+  "type": "module",
   "description": "The purpose of this repository is to store homeworks. See more detailes below:",
   "main": "index.js",
   "scripts": {
