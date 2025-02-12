@@ -31,7 +31,7 @@ async function callRequest() {
         }
         catch (secondError) {
             //throw new Error("secondError" + secondError.message);
-            console.error("secondError" + secondError.message);
+            console.error("second Error " + secondError.message);
         }
     }
 }
