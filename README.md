@@ -6,5 +6,7 @@ The purpose of this repository is to store homeworks. See more detailes below:
 
 **5 Home work** - [lesson5 homework (functions)](lesson5-homework)
 
+**6 Home work** - [lesson6 homework (try-catch/async/promises)](lesson6-homework)
+
 
 
