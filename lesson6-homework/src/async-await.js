@@ -21,4 +21,8 @@ function processData(data) {
     console.log("Data received:", data);
 }
 
-fetchData(apiUrl);
+//fetchData(apiUrl);
+
+(async () => {
+    await fetchData(apiUrl);
+})();
