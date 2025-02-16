@@ -3,11 +3,12 @@ const stringArray2: string [] = ['apple', 'banana', 'fruit'];
 
 
 const sumNumElement = (array: number []): number => {
-    let sum = 0;
+    /*let sum = 0;
     array.forEach((value: number) => {
         sum = sum + value;
     });
-    return sum;
+    return sum; */
+    return array.reduce((sum, value) => sum + value, 0);
 };
 
 
@@ -17,6 +18,8 @@ const sumStrElement = (array: string[]): string => {
 
 
 const SumAnyArray = (array: number [] | string[]): number | string => {
+    if (array.length === 0) 
+        return ('Empty array');
     if (typeof array[0] === 'number') {
         return sumNumElement(array as number[]);
     }
