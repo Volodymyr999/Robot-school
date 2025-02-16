@@ -8,5 +8,7 @@ The purpose of this repository is to store homeworks. See more detailes below:
 
 **6 Home work** - [lesson6 homework (try-catch/async/promises)](lesson6-homework)
 
+**7 Home work** -[lesson7 homework (ts-basic)](lesson7-homework)
+
 
 
