@@ -26,11 +26,11 @@ class Engine {
 
 // Клас Car, який наслідує Vehicle і використовує композицію з Engine
 class Car extends Vehicle {
-    private engine: Engine;
+    private engine: Engine; // Створюється приватна властивість engine
 
     public constructor(brand: string, model: string, engineType: string) {
         super(brand, model);
-        this.engine = new Engine(engineType); // Композиція
+        this.engine = new Engine(engineType); // створюється новий об'єкт Engine і присвоюється властивості engine
     }
 
     // Реалізація абстрактного методу
