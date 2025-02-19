@@ -35,6 +35,7 @@ class User {
         public company: Company
     ) {}
 
+    // Реалізація методу в класі
     public displayInfo(): void {
         console.log(`User: ${this.name} (${this.username})`);
         console.log(`Email: ${this.email}`);
@@ -68,4 +69,6 @@ async function getJson(): Promise<User> {
     const company = new Company("Delasport", "Multi-layered client-server neural-net", "harness real-time e-markets");
     const user = new User(1, "Volodymyr", "Sport", "Sincere@april.biz", address, "1-770-736-8031 x56442", "hildegard.org", company);
     user.displayInfo();
+    const geo2 = new Geo("-37", "81");
+    console.log(geo2);
 })();
