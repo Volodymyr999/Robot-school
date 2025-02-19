@@ -10,5 +10,7 @@ The purpose of this repository is to store homeworks. See more detailes below:
 
 **7 Home work** -[lesson7 homework (ts-basic)](lesson7-homework)
 
+**8 Home work** -[lesson8 homework (interfaces-classes)](lesson8-homework)
+
 
 
