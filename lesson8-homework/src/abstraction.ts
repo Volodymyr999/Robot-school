@@ -62,17 +62,3 @@ export class Bicycle extends Vehicle {
         console.log(`${this.brand} ${this.model} is ringing the bell.`);
     }
 }
-
-if (require.main === module) {
-// Приклад використання
-    const myCar = new Car("Toyota", "Corolla", "V6");
-    myCar.start(); // Starting Toyota Corolla. Engine (V6) started.
-    myCar.accelerate(); // Toyota Corolla is accelerating.
-    myCar.stop(); // Toyota Corolla has stopped.
-
-    const myBicycle = new Bicycle("Trek", "FX 2");
-    myBicycle.start(); // Pedaling Trek FX 2.
-    myBicycle.ringBell(); // Trek FX 2 is ringing the bell.
-    myBicycle.stop(); // Trek FX 2 has stopped.і
-}
-

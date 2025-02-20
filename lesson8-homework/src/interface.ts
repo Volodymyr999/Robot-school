@@ -14,7 +14,7 @@ interface Company {
     catchPhrase: string;
     bs: string;
 }
-interface User {
+export interface User3 {
     id: number;
     name: string;
     username: string;
@@ -24,15 +24,3 @@ interface User {
     website: string;
     company: Company;
 }
-
-export async function getJson(): Promise<User> {
-    const response = await fetch('https://jsonplaceholder.typicode.com/users/1');
-    const json = await response.json() as User;
-    return json;
-}
-
-(async () => {
-    const data = await getJson();
-    console.log(data.name);
-    console.log(data.address.geo.lat);
-})();
