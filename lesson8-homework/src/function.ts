@@ -1,19 +1,14 @@
-// Асинхронна функція, яка імітує отримання даних з сервера
-async function fetchData(): Promise<string> {
-    // Імітуємо затримку мережевого запиту за допомогою setTimeout
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve("Дані отримано!");
-        }, 2000); // Затримка 2 секунди
-    });
+import { User } from './class';
+import { User3 } from './interface';
+
+export async function getJson(): Promise<User> {
+    const response = await fetch('https://jsonplaceholder.typicode.com/users/1');
+    const json = await response.json();
+    return json;
 }
 
-// Виклик асинхронної функції
-async function main():Promise<void> {
-    console.log("Отримання даних...");
-    const result = await fetchData(); // Чекаємо на завершення асинхронної функції
-    console.log(result); // Виведе: "Дані отримано!"
+export async function getJson3(): Promise<User3> {
+    const response = await fetch('https://jsonplaceholder.typicode.com/users/1');
+    const json = await response.json() as User3;
+    return json;
 }
-
-// Запуск головної функції
-main();
