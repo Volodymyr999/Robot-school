@@ -8,9 +8,13 @@ The purpose of this repository is to store homeworks. See more detailes below:
 
 **6 Home work** - [lesson6 homework (try-catch/async/promises)](lesson6-homework)
 
-**7 Home work** -[lesson7 homework (ts-basic)](lesson7-homework)
+**7 Home work** - [lesson7 homework (ts-basic)](lesson7-homework)
 
-**8 Home work** -[lesson8 homework (interfaces-classes)](lesson8-homework)
+**8 Home work** - [lesson8 homework (interfaces-classes)](lesson8-homework)
+
+**9 Home work** - [lesson9 homework (OOP)](lesson9-homework)
+
+**10 Home work** - [lesson10 homework (Unit tests-basic)](lesson10-homework/mocha)
 
 
 

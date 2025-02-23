@@ -30,7 +30,7 @@ export class Car extends Vehicle {
     private engine: Engine; // Створюється властивість engine з типом Engine
 
     public constructor(brand: string, model: string, engineType: string) {
-        super(brand, model);
+        super(brand, model); // Виклик конструктора батьківського класу
         this.engine = new Engine(engineType); // створюється новий об'єкт Engine і присвоюється властивості engine
     }
 
