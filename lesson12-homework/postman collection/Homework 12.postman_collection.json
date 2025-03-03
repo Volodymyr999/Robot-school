@@ -1,0 +1,310 @@
+{
+	"info": {
+		"_postman_id": "4a313449-2e19-4b20-9ebb-a1b98137fd90",
+		"name": "Homework 12",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11499994"
+	},
+	"item": [
+		{
+			"name": "jokes/random",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//storing jokeId",
+							"let jokeId = pm.response.json().id;",
+							"pm.collectionVariables.set(\"jokeID\", jokeId);",
+							"",
+							"//storing jokeResponce",
+							"let jokeResponce = pm.response.json();",
+							"pm.collectionVariables.set(\"jokeResponce\", jokeResponce);",
+							"",
+							"",
+							"",
+							"const schema = {",
+							"        type: \"object\",",
+							"        properties: {",
+							"            type: { type: \"string\" },",
+							"            setup: { type: \"string\" },",
+							"            punchline: { type: \"string\" },",
+							"            id: { type: \"number\" }",
+							"        },",
+							"        required: [\"type\", \"setup\", \"punchline\", \"id\"]",
+							"    }",
+							"",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Validate JSON schema of the response\", function () {",
+							"    pm.response.to.have.jsonSchema(schema);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{envURL}}/jokes/random",
+					"host": [
+						"{{envURL}}"
+					],
+					"path": [
+						"jokes",
+						"random"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "jokes/ten",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();",
+							"",
+							"pm.test(\"Count of objects = 10\", function () {",
+							"    pm.expect(response.length).to.equal(10);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{envURL}}/jokes/ten",
+					"host": [
+						"{{envURL}}"
+					],
+					"path": [
+						"jokes",
+						"ten"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "types",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{envURL}}/types",
+					"host": [
+						"{{envURL}}"
+					],
+					"path": [
+						"types"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "random/3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();",
+							"",
+							"pm.test(\"Count of objects = 3\", function () {",
+							"    pm.expect(response.length).to.equal(3);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{envURL}}/jokes/random/3",
+					"host": [
+						"{{envURL}}"
+					],
+					"path": [
+						"jokes",
+						"random",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "jokes/jokeID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Compare witrh stored responce from /jokes/random",
+							"let storedResponse = pm.collectionVariables.get(\"jokeResponce\");",
+							"",
+							"pm.test(\"Response matches the jokeResponse variable\", function () {",
+							"pm.expect(pm.response.json()).to.eql(storedResponse)});",
+							"",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{envURL}}/jokes/{{jokeID}}",
+					"host": [
+						"{{envURL}}"
+					],
+					"path": [
+						"jokes",
+						"{{jokeID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "jokes/jokeID Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Validation response message\", function () {",
+							"pm.expect(pm.response.json().message).to.eql(\"joke not found\")",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Validation response type\", function () {",
+							"    pm.expect(pm.response.json().type).to.equal(\"error\");",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{envURL}}/jokes/{{jokeID2}}",
+					"host": [
+						"{{envURL}}"
+					],
+					"path": [
+						"jokes",
+						"{{jokeID2}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "envURL",
+			"value": "localhost:3005",
+			"type": "string"
+		},
+		{
+			"key": "jokeID",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "jokeID2",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "jokeResponce",
+			"value": ""
+		}
+	]
+}
