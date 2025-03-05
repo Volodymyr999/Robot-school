@@ -35,8 +35,8 @@ export class Car extends Vehicle {
     }
 
     // Реалізація абстрактного методу
-    public start(): void {
-        console.log(`Starting ${this.brand} ${this.model}.`);
+    public start(): string {
+        return('Starting ${this.brand} ${this.model}.');
         this.engine.startEngine();
     }
 

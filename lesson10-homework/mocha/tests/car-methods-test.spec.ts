@@ -10,7 +10,7 @@ describe('Car test suite (Mocha)', () => { //тестсет
             const ownCar = new Car('BMW', '5 series', 'L6');
 
             // Act
-            ownCar.start();
+            // ownCar.start();
 
             // Assert
             expect(ownCar.brand).to.be.equal('BMW');
@@ -19,25 +19,21 @@ describe('Car test suite (Mocha)', () => { //тестсет
 
 
     describe('Verify Car model', () => { // TC 2
-        let ownCar: Car; // оголошення змінної
-
-        beforeEach(() => {
-            ownCar = new Car('BMW', '5 series', 'L6'); // ініціалізація змінної
-        });
 
         it('calling "start" method', () => {
+        //Arrange
+            const ownCar = new Car('BMW', '5 series', 'L6'); // ініціалізація змінної
+
             // Act
             ownCar.start();
-        });
 
-        it('validation step', () => {
             // Assert
             expect(ownCar.model).to.be.equal('5 series');
         });
     });
 
 
-    describe('Verify "accelerate" method', () => { // TC 2 перевірка accelerate методу
+    describe('Verify "accelerate" method', () => { // TC 3 перевірка accelerate методу
         let ownCar: Car; //оголошення змінних
         let consoleLogSpy: sinon.SinonSpy;
 
@@ -59,12 +55,3 @@ describe('Car test suite (Mocha)', () => { //тестсет
         });
     });
 });
-
-
-/*
-   public accelerate(): void {
-        console.log(`${this.brand} ${this.model} is accelerating.`);
-    }
-*/
-
-
